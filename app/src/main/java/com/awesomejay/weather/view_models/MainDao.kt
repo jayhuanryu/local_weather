@@ -10,14 +10,6 @@ import com.awesomejay.weather.models.WeatherAdapterData
 @Dao
 interface MainDao {
 
-    @Query("SELECT * FROM city_name_table")
-    fun getAllCityNames() : LiveData<List<SearchLocationResponseModel>>
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCityNameSuspended(cityName : SearchLocationResponseModel)
-
-    @Query("DELETE FROM city_name_table")
-    suspend fun deleteAllCityName()
 
     @Query("SELECT * FROM consolidate_weather_table ORDER BY id ASC")
     fun getAllWeatherList() : LiveData<List<WeatherAdapterData>>

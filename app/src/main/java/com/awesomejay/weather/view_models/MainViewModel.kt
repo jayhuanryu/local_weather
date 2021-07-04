@@ -23,7 +23,6 @@ class MainViewModel @ViewModelInject constructor(private val repository: MainRep
     init {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                repository.deleteAllCityNames()
                 repository.deleteAllWeatherInfo()
             }
         }

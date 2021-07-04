@@ -10,7 +10,6 @@ class MainRepository (private val mainDao: MainDao){
     private val TAG = javaClass.name
     private val weatherInterface by lazy { WeatherApiInterface.create()}
 
-    val allCityNames = mainDao.getAllCityNames()
     val allCityWeather= mainDao.getAllWeatherList()
 
     // server interface
@@ -18,18 +17,10 @@ class MainRepository (private val mainDao: MainDao){
     suspend fun getCityWeather(woeid:String) = weatherInterface.getWeatherById(woeid)
 
     // db delete interface
-    suspend fun deleteAllCityNames() = mainDao.deleteAllCityName()
     suspend fun deleteAllWeatherInfo() = mainDao.deleteAllWeatherInfo()
 
 
-
-
     // db insert interface
-    @Suppress("RedundantSuspendModifier")
-    @WorkerThread
-    suspend fun insertCityName(cityname : SearchLocationResponseModel) = mainDao.insertCityNameSuspended(cityname)
-
-
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
     suspend fun insertWeatherInfo(displayInfoTableModel: WeatherAdapterData) = mainDao.insert(displayInfoTableModel)

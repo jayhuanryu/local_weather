@@ -10,7 +10,7 @@ import com.awesomejay.weather.models.WeatherAdapterData
 import com.awesomejay.weather.utils.Converters
 
 
-@Database(entities = [WeatherAdapterData::class, SearchLocationResponseModel::class], version = 1)
+@Database(entities = [WeatherAdapterData::class], version = 1)
 @TypeConverters(Converters::class)
 abstract class MainRoomDatabase : RoomDatabase() {
 
