@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="data" type="com.awesomejay.weather.models.WeatherAdapterData"/>
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginVertical="10dp"
+    android:weightSum="10">
+
+    <TextView
+        android:layout_weight="2"
+        android:text="@{data.cityName}"
+        android:layout_gravity="center"
+        style="@style/RecyclerViewHeader"/>
+
+    <include
+        android:id="@+id/layout_weather_today"
+        layout="@layout/item_rv_subitem_weather"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        bind:data="@{data.todayWeather}"/>
+
+    <include
+        android:id="@+id/layout_weather_tomorrow"
+        layout="@layout/item_rv_subitem_weather"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        bind:data="@{data.tomorrowWeather}"/>
+
+
+</LinearLayout>
+</layout>
