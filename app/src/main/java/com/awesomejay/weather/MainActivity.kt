@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.TableRow
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -79,5 +80,6 @@ class MainActivity : AppCompatActivity() {
         recyclerViewAdapter.updateAdapterList(emptyList())
         binding.layoutSwipeRefresh.isRefreshing = true
     }
+
 
 }
