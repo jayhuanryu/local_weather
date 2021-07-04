@@ -3,12 +3,9 @@ package com.awesomejay.weather
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.LinearLayout
-import android.widget.TableRow
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.awesomejay.weather.adapters.WeatherRecyclerViewAdapter
 import com.awesomejay.weather.databinding.ActivityMainBinding
 import com.awesomejay.weather.models.WeatherAdapterData
 import com.awesomejay.weather.view_models.MainViewModel

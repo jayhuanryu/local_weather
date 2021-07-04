@@ -78,8 +78,6 @@ class MainViewModel @ViewModelInject constructor(private val repository: MainRep
                     tempWeatherInfo.add(weatherDataForCities)
                     Log.d(TAG, "[getCityWeather] >> insertCity : ${weatherDataForCities.cityName}")
 
-//                    val dbResult = repository.insertWeatherInfo(weatherDataForCities)
-//                    Log.d(TAG, "[getCityWeather] >> dbResult + $dbResult" + weatherDataForCities.cityName)
 
                 }
                 else {

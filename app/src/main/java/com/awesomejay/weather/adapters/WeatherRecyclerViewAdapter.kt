@@ -1,15 +1,14 @@
-package com.awesomejay.weather
+package com.awesomejay.weather.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.awesomejay.weather.MainActivity
 import com.awesomejay.weather.databinding.ItemRvHeaderBinding
 import com.awesomejay.weather.databinding.ItemRvWeatherBinding
-import com.awesomejay.weather.models.DisplayInfoTableModel
 import com.awesomejay.weather.models.WeatherAdapterData
-import kotlinx.coroutines.flow.merge
 
-class WeatherRecyclerViewAdapter(private val activity: MainActivity): RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
+class WeatherRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
 
     private val TAG = javaClass.simpleName
 
@@ -61,7 +60,6 @@ class WeatherRecyclerViewAdapter(private val activity: MainActivity): RecyclerVi
 
 
     fun updateAdapterList(updatedList : List<WeatherAdapterData>) {
-        // put header list
         weatherDisplayInfoList = updatedList
         notifyDataSetChanged()
     }
