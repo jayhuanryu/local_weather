@@ -25,7 +25,7 @@ class WeatherRecyclerViewAdapter(private val activity: MainActivity): RecyclerVi
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType){
             0 -> {
-                val binding : ItemRvHeaderBinding = ItemRvHeaderBinding.inflate(LayoutInflater.from(parent.context))
+                val binding : ItemRvHeaderBinding = ItemRvHeaderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
                 HeaderViewHolder(binding)
             }
             else -> {

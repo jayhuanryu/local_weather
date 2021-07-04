@@ -17,12 +17,16 @@
 
     <style name="RecyclerViewHeader" parent="Widget.AppCompat.TextView">
         <item name="backgroundColor">#d3d3d3</item>
-        <item name="borderWidth">1dp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAlignment">center</item>
         <item name="android:layout_gravity">center_horizontal</item>
     </style>
+
+    <style name="RecyclerViewItem">
+        <item name="background">@drawable/border_layout_without_background</item>
+    </style>
+
 
 </resources>

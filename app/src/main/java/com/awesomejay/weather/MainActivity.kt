@@ -10,6 +10,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.awesomejay.weather.databinding.ActivityMainBinding
+import com.awesomejay.weather.models.WeatherAdapterData
 import com.awesomejay.weather.view_models.MainViewModel
 import com.awesomejay.weather.view_models.MainViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
 
     // Track updating
-    var numberOfCity = 0
+    var numberOfCity = -1
 
     private lateinit var recyclerViewAdapter : WeatherRecyclerViewAdapter
 
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     private fun initView() {
         recyclerViewAdapter = WeatherRecyclerViewAdapter(this)
         binding.layoutSwipeRefresh.isEnabled = true
-        binding.layoutSwipeRefresh.post {binding.layoutSwipeRefresh.isRefreshing = true }
+        binding.layoutSwipeRefresh.post { binding.layoutSwipeRefresh.isRefreshing = true }
         binding.layoutSwipeRefresh.setOnRefreshListener {
             refresh()
         }
@@ -68,7 +69,17 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "[addObserver] >> weatherList ${it.size}")
 
             if (numberOfCity == it.size) {
-                recyclerViewAdapter.updateAdapterList(it)
+                var headeredList = mutableListOf<WeatherAdapterData>()
+                val headerData = WeatherAdapterData(
+                        0,
+                        0,
+                        " ",
+                        it[0].todayWeather!!,
+                        it[0].tomorrowWeather!!
+                )
+                headeredList.add(headerData)
+                headeredList.addAll(it)
+                recyclerViewAdapter.updateAdapterList(headeredList)
                 binding.layoutSwipeRefresh.isRefreshing = false
             }
 
