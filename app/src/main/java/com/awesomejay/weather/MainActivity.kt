@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        recyclerViewAdapter = WeatherRecyclerViewAdapter(this)
+        recyclerViewAdapter = WeatherRecyclerViewAdapter()
         binding.layoutSwipeRefresh.isEnabled = true
         binding.layoutSwipeRefresh.post { binding.layoutSwipeRefresh.isRefreshing = true }
         binding.layoutSwipeRefresh.setOnRefreshListener {

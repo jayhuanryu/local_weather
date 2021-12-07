@@ -5,7 +5,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.awesomejay.weather.models.SearchLocationResponseModel
 import com.awesomejay.weather.models.WeatherAdapterData
 import com.awesomejay.weather.utils.Converters
 
