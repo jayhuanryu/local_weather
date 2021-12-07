@@ -37,4 +37,16 @@ abstract class MainRoomDatabase : RoomDatabase() {
         }
     }
 
+    /**
+     * If I wanted to update version # of the database, the following would do the job.
+     *
+     *
+    val MIGRATION_1_2 = object : Migration(1, 2) {
+        override fun migrate(database: SupportSQLiteDatabase) {
+            database.execSQL("CREATE TABLE `Fruit` (`id` INTEGER, `name` TEXT, " +
+                    "PRIMARY KEY(`id`))")
+        }
+    }
+    **/
+
 }
